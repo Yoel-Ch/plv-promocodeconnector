@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>promocodeconnector</name>
+    <displayName><![CDATA[Permet la r&eacute;cup&eacute;ration des codes promos produit par produit]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[Permet la r&eacute;cup&eacute;ration des codes promos produit par produit dans l&#039;ERP]]></description>
+    <author><![CDATA[Yoel CHICHEPORTICHE]]></author>
+    <tab><![CDATA[checkout]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+</module>
