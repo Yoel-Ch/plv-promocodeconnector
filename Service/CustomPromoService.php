@@ -3,6 +3,8 @@
 
 class CustomPromoService
 {
+    public const ID_SUPPLIER_PROMO = 11;
+
     public function calculatePromoPerProductPerCartRule(array $orderCartRuleArray, array $promosPerProduct, Cart $cart): array
     {
         $orderCartRule = new OrderCartRule($orderCartRuleArray['id_order_cart_rule']);
@@ -24,11 +26,14 @@ class CustomPromoService
 
     public function generatePromoCodes(array $orderCartRules): string
     {
-        //array_map renvoie un tableau et implode le transforme en string séparé par un espace
-        return implode(' ',array_map(
-            fn($orderCartRule)=>(new CartRule($orderCartRule['id_cart_rule']))->code ?: '',
-            $orderCartRules
-        ));
+        $codes = '';
+        foreach ($orderCartRules as $orderCartRule) {
+            if($orderCartRule['id_cart_rule']==self::ID_SUPPLIER_PROMO){
+                continue;
+            }
+            $codes .= ((new CartRule($orderCartRule['id_cart_rule']))->code ?: '') . ' ';
+        }
+        return trim($codes);
     }
 
     public function calculateValuePerProduct(OrderCartRule $orderCartRule, int $numberOfProductsEligible, int $numberOfProducts): int|float
