@@ -54,7 +54,7 @@ class promocodeconnector extends Module
         Db::getInstance()->execute($sql);
 
         $sql = "CREATE TABLE IF NOT EXISTS `" . _DB_PREFIX_ . "promo_code_connector_supplier` (
-            `id_promo_code_connector` INT(11) NOT NULL AUTO_INCREMENT,
+            `id_promo_code_connector_supplier` INT(11) NOT NULL AUTO_INCREMENT,
             `id_order` INT(11) NOT NULL,
             `id_product` INT(11),
             `id_product_attribute` INT(11),
