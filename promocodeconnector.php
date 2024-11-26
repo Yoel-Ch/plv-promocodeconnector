@@ -59,7 +59,7 @@ class promocodeconnector extends Module
             `id_product` INT(11),
             `id_product_attribute` INT(11),
             `value_tax_excluded` DECIMAL(20,2) DEFAULT '0.000000',
-            PRIMARY KEY (`id_promo_code_connector`)
+            PRIMARY KEY (`id_promo_code_connector_supplier`)
         ) ENGINE=" . _MYSQL_ENGINE_ . " DEFAULT CHARSET=utf8;";
 
         return Db::getInstance()->execute($sql);
