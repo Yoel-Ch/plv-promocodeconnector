@@ -3,7 +3,7 @@
 
 class CustomPromoService
 {
-    public const ID_SUPPLIER_PROMO = 11;
+    public const ID_SUPPLIER_PROMO = 3;
 
     public function calculatePromoPerProductPerCartRule(array $orderCartRuleArray, array $promosPerProduct, Cart $cart): array
     {
